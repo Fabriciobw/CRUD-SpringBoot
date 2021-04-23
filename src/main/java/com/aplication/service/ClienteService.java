@@ -1,13 +1,16 @@
-package com.service;
+package com.aplication.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.model.Cliente;
-import com.repository.ClienteRepository;
+import com.aplication.model.Cliente;
+import com.aplication.repository.ClienteRepository;
 
+@Service
 public class ClienteService {
+	
 	
 	@Autowired
 	ClienteRepository repository;
@@ -31,3 +34,5 @@ public class ClienteService {
 		}
 
 }
+
+

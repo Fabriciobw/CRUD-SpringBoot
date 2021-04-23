@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
 	<title>Pagina inicial</title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -14,31 +16,32 @@
 	<div class="container" >
 
 	<h2>Novo Cliente</h2>	
-		<form class="row g-3 col-8">
+		<form class="row g-3 col-8" method="POST">
   <div class="col-md-4">
     <label for="inputEmail4" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="Nome">
+    <input type="text" class="form-control" name="nome">
   </div>
   <div class="col-md-4">
     <label class="form-label">Email</label>
-    <input type="email" class="form-control" id="Email">
+    <input type="email" class="form-control" name="email">
   </div>
   <div class="col-4">
     <label for="inputAddress" class="form-label">Sobrenome</label>
-    <input type="text" class="form-control" id="Sobrenome">
+    <input type="text" class="form-control" id="Sobrenome" name="sobrenome">
   </div>
   <div class="col-4">
     <label for="inputAddress2" class="form-label">CPF</label>
-    <input type="text" class="form-control" id="Cpf" placeholder="ex: 888.999.777-77">
+    <input type="text" class="form-control" placeholder="ex: 888.999.777-77" name="cpf">
   </div>
   <div class="col-md-4">
     <label for="inputCity" class="form-label">Telefone</label>
-    <input type="text" class="form-control" id="Telefone">
+    <input type="text" class="form-control" id="Telefone" name="telefone">
   </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Enviar</button>
   </div>
+  </form>
   </div>
-</form>
+
 </body>
 </html>

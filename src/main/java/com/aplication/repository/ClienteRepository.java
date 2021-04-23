@@ -1,8 +1,8 @@
-package com.repository;
+package com.aplication.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.model.Cliente;
+import com.aplication.model.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
