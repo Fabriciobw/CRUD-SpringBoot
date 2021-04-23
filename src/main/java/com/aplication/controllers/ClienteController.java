@@ -1,9 +1,12 @@
 package com.aplication.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.aplication.model.Cliente;
 import com.aplication.service.ClienteService;
@@ -31,6 +34,18 @@ public class ClienteController {
 		repository.adicionar(cliente);
 		return "redirect:/cadastrarCliente";
 	}
+	
+	@RequestMapping("/listarClientes")
+	public ModelAndView listar() {
+		
+		ModelAndView mv = new ModelAndView("lista");
+		List<Cliente> clientes = repository.findAll();
+		mv.addObject("clientes", clientes);
+		return mv;
+		
+	}
+	
+	
 	
 
 }

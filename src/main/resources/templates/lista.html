@@ -15,39 +15,40 @@
 	<body>
 	<div class="container" >
 
-	<h2>Novo Cliente</h2>	
-		<form class="row g-3 col-8" method="POST">
-  <div class="col-md-4">
-    <label for="inputEmail4" class="form-label">Nome</label>
-    <input type="text" class="form-control" name="nome">
-  </div>
-  <div class="col-md-4">
-    <label class="form-label">Email</label>
-    <input type="email" class="form-control" name="email">
-  </div>
-  <div class="col-4">
-    <label for="inputAddress" class="form-label">Sobrenome</label>
-    <input type="text" class="form-control" id="Sobrenome" name="sobrenome">
-  </div>
-  <div class="col-4">
-    <label for="inputAddress2" class="form-label">CPF</label>
-    <input type="text" class="form-control" placeholder="ex: 888.999.777-77" name="cpf">
-  </div>
-  <div class="col-md-4">
-    <label for="inputCity" class="form-label">Telefone</label>
-    <input type="text" class="form-control" id="Telefone" name="telefone">
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </div>
-  </form>
-
-    <br>
-    <a href="/listarClientes">Lista de Clientes</a>
-  </div>
+	<h2>Clientes</h2>	
+		
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Email</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    
 
 
+    <tr th:each="cliente : ${clientes}">
+      <td> <p th:text = "${cliente.id}"> </p></td>
+      <td> <p th:text = "${cliente.nome}"> </p></td>
+      <td> <p th:text = "${cliente.sobrenome}"> </p></td>
+      <td> <p th:text = "${cliente.email}"> </p></td>
+      <td> <p th:text = "${cliente.cpf}"> </p></td>
+      <td><p th:text = "${cliente.telefone}"> </p></td>
 
+    </tr>
+     
+
+  </tbody>
+    
+</table>
+
+
+  </div>
 
 </body>
 </html>
