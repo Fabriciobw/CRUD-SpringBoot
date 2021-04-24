@@ -15,39 +15,43 @@
 	<body>
 	<div class="container" >
 
-	<h2>Novo Cliente</h2>	
-		<form class="row g-3 col-8" method="POST">
+	<h2>Atualizar Cliente</h2>
+
+  <form class="row g-3 col-8" th:action="@{/cadastrarCliente}" th:object="${clienteOb}" method="post">
+  <div class="col-md-4">
+    <label class="form-label">Id</label>
+    <input type="text" th:field="*{id}"class="form-control" name="id" readonly>
+  </div>	
+		
   <div class="col-md-4">
     <label  class="form-label">Nome</label>
-    <input type="text" class="form-control" name="nome">
+    <input type="text" th:field="*{nome}" class="form-control" name="nome">
   </div>
   <div class="col-md-4">
     <label class="form-label">Email</label>
-    <input type="email" class="form-control" name="email">
+    <input type="email" th:field="*{email}" class="form-control" name="email">
   </div>
   <div class="col-4">
-    <label class="form-label">Sobrenome</label>
-    <input type="text" class="form-control" id="Sobrenome" name="sobrenome">
+    <label  class="form-label">Sobrenome</label>
+    <input type="text" th:field="*{sobrenome}" class="form-control" id="Sobrenome" name="sobrenome">
   </div>
   <div class="col-4">
-    <label class="form-label">CPF</label>
-    <input type="text" class="form-control" placeholder="ex: 888.999.777-77" name="cpf">
+    <label  class="form-label">CPF</label>
+    <input type="text" th:field="*{cpf}" class="form-control" placeholder="ex: 888.999.777-77" name="cpf">
   </div>
   <div class="col-md-4">
-    <label class="form-label">Telefone</label>
-    <input type="text" class="form-control" id="Telefone" name="telefone">
+    <label  class="form-label">Telefone</label>
+    <input type="text" th:field="*{telefone}" class="form-control" id="Telefone" name="telefone">
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary">Atualizar</button>
   </div>
   </form>
 
     <br>
     <a href="/listarClientes">Lista de Clientes</a>
   </div>
-
-
-
+  
 
 </body>
 </html>
